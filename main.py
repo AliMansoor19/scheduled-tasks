@@ -5,7 +5,7 @@ import pandas as pd
 import os
 
 MY_EMAIL = os.environ.get("MY_EMAIL")
-PASSWORD = os.environ.get("MY_PASSWORD")
+MY_PASSWORD = os.environ.get("MY_PASSWORD")
 
 today_day = dt.datetime.now().day
 today_month = dt.datetime.now().month
@@ -36,7 +36,7 @@ random_letter = random.choice(letters_list)
 
 with smtplib.SMTP('smtp.gmail.com') as connection:
     connection.starttls()
-    connection.login(user=MY_EMAIL, password=PASSWORD)
+    connection.login(user=MY_EMAIL, password=MY_PASSWORD)
     connection.sendmail(from_addr=MY_EMAIL,
                          to_addrs=birthday_email,
                          msg= 'Subject:Happy Birthday!\n\n' \
